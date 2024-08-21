@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+
+ <meta charset="UTF-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>Rock Paper Scissors - Two Players</title>
+
+ <!-- <link rel="stylesheet" href="game.css"> -->
+
+ <script>
+
+  function play() {
+
+// Get choices from the dropdowns
+
+const player1Choice = document.getElementById('player1Choice').value;
+
+const player2Choice = document.getElementById('player2Choice').value;
+
+// Display choices
+
+document.getElementById('player1ChoiceDisplay').textContent = `Player 1 chose: ${player1Choice}`;
+
+document.getElementById('player2ChoiceDisplay').textContent = `Player 2 chose: ${player2Choice}`;
+
+// Determine the outcome
+
+let result;
+
+if (player1Choice === player2Choice) {
+
+ result = 'It\'s a tie!';
+
+} else if (
+
+ (player1Choice === 'rock' && player2Choice === 'scissors') ||
+
+ (player1Choice === 'paper' && player2Choice === 'rock') ||
+
+ (player1Choice === 'scissors' && player2Choice === 'paper')
+
+) {
+
+ result = 'Player 1 wins!';
+
+} else {
+
+ result = 'Player 2 wins!';
+
+}
+
+// Display outcome
+
+document.getElementById('outcome').textContent = result;
+
+}
+
+ </script>
+
+<style>
+
+ body {
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+height: 100vh;
+
+margin: 0;
+
+background-image: url(prs.png);
+
+background-size: 350px 250px;
+
+background-repeat: ;
+
+/* background-color: rgb(217, 207, 224); */
+
+}
+
+.container {
+
+text-align: center;
+
+background-color: rgb(248, 237, 218);
+
+padding-left: 20px;
+
+padding-right: 20px;
+
+padding-top: 20px;
+
+padding-bottom: 20px;
+
+border-radius: 10px;
+
+}
+
+.player {
+
+margin: 20px;
+
+}
+
+select {
+
+font-size: 18px;
+
+margin: 10px;
+
+padding: 10px;
+
+background-color: rgb(247, 243, 238);
+
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+button {
+
+font-size: 18px;
+
+margin: 20px;
+
+padding: 10px 20px;
+
+cursor: pointer;
+
+background-color: rgb(221, 188, 118);
+
+border-radius: 10px;
+
+font-size: 22px;
+
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+color: rgb(0, 0, 0);
+
+}
+
+#result p {
+
+font-size: 20px;
+
+font-weight: bold;
+
+}
+
+option{
+
+border-radius: 2%;
+
+border-color: rgb(102, 77, 131);
+
+}
+
+h1{
+
+ color: rgb(0, 0, 0);
+
+ padding-bottom: 70px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+ <div class="container">
+
+  <img src="" alt="">
+
+  <h1 >Rock & Paper & Scissors </h1>
+
+  <div class="player">
+
+   <h2>Guest 1</h2>
+
+   <select id="player1Choice" style="border-radius: 5px;">
+
+    <option value="rock">Rock</option>
+
+    <option value="paper">Paper</option>
+
+    <option value="scissors">Scissors</option>
+
+   </select>
+
+  </div>
+
+  <div class="player">
+
+   <h2>Guest 2</h2>
+
+   <select id="player2Choice" style="border-radius: 5px;">
+
+    <option value="rock">Rock</option>
+
+    <option value="paper">Paper</option>
+
+    <option value="scissors">Scissors</option>
+
+   </select>
+
+  </div>
+
+  <button onclick="play()">Play</button>
+
+  <div id="result">
+
+   <p id="player1ChoiceDisplay"></p>
+
+   <p id="player2ChoiceDisplay"></p>
+
+   <p id="outcome"></p>
+
+  </div>
+
+ </div>
+
+</body>
+
+</html>
+
+
+
